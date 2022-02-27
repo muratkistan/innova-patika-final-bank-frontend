@@ -16,6 +16,12 @@ class CreditService{
         return axios.get(CREDIT_API_URL+"/all/"+identityNumber);
     }
 
+    getCreditByIdentityNumber(identityNumber){
+        return axios.get(CREDIT_API_URL+"/"+identityNumber); 
+    }
+
+
+
 }
 
 export default new CreditService();
