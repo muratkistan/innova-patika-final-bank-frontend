@@ -54,12 +54,12 @@ const CreateCustomer = () => {
 
     CustomerService.addCustomer(body)
       .then((response) => {
-        // toast.success("Basarili", { autoClose: 1000 });
+        toast.success(" Successful", { autoClose: 1000 });
         history.push("/customers");
       })
       .catch((err) => {
         if (err.response.data.validationErrors) {
-          // toast.error("Basarisiz", { autoClose: 1000 });
+          toast.error(" Unsuccessful", { autoClose: 1000 });
           setErrors(err.response.data.validationErrors);
         }
       });

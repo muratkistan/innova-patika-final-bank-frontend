@@ -49,7 +49,7 @@ const CreditApplication = () => {
 
     CreditService.addCredit(body)
       .then((response) => {
-        // toast.success("Basvuru Basarili", { autoClose: 8000 });
+        toast.success("Successful", { autoClose: 8000 });
 
         history.push("/sorgu");
       })
@@ -57,7 +57,7 @@ const CreditApplication = () => {
         if (err.response.data.validationErrors) {
           
           setErrors(err.response.data.validationErrors);
-           toast.error("Basvuru Hatali", { autoClose: 1000 });
+           toast.error("Unsuccessful", { autoClose: 1000 });
         }
       });
   };

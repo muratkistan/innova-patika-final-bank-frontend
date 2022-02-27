@@ -70,7 +70,7 @@ const Search = () => {
             <tbody>
             {credit.identityNumber && <tr>
                 <td >{credit.id}</td>
-                <td >{credit.IdentityNumber}</td>
+                <td >{credit.identityNumber}</td>
                 <td >{credit.creditLimit}</td>
                             {credit.status ? (
                   <td style={{ color: "green" }}>

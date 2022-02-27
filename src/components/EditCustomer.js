@@ -29,11 +29,11 @@ const EditCustomer = () => {
 
     CustomerService.updateCustomer(id, customer)
       .then((response) => {
-        // toast.success(" Basarili", { autoClose: 1000 });
+        toast.success("Update Successful", { autoClose: 1000 });
         history.push("/customers");
       })
       .catch((error) => {
-        // toast.error("Basarisiz", { autoClose: 1000 });
+        toast.error("Update Unsuccessful", { autoClose: 1000 });
         console.log(error);
       });
   };
