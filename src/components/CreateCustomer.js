@@ -36,8 +36,8 @@ const CreateCustomer = () => {
   const onClickSendButton = (event) => {
     event.preventDefault();
 
-    const { identityNumber, firstName, lastName, monthlySalary, phoneNumber } =
-      form;
+    const { identityNumber, firstName, lastName, monthlySalary, phoneNumber } =form;
+
 
     const body = {
       identityNumber: identityNumber,
@@ -47,14 +47,19 @@ const CreateCustomer = () => {
       phoneNumber: phoneNumber,
     };
 
+  
+    
+
+   
+
     CustomerService.addCustomer(body)
       .then((response) => {
-        toast.success("Basarili", { autoClose: 1000 });
-        history.push("/");
+        // toast.success("Basarili", { autoClose: 1000 });
+        history.push("/customers");
       })
       .catch((err) => {
         if (err.response.data.validationErrors) {
-          toast.error("Basarisiz", { autoClose: 1000 });
+          // toast.error("Basarisiz", { autoClose: 1000 });
           setErrors(err.response.data.validationErrors);
         }
       });

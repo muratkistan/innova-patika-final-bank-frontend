@@ -5,28 +5,31 @@ import CreditService from "../services/CreditService";
 const Search = () => {
   const [credits, setCredits] = useState([]);
   const [identityNumber, setIdentityNumber] = useState({});
+  const [credit,setCredit]=useState({});
 
   const onClickSearch = (event) => {
     event.preventDefault();
 
-    CreditService.getAllCreditsByIdentityNumber(identityNumber)
+    CreditService.getCreditByIdentityNumber(identityNumber)
       .then((response) => {
-        setCredits(response.data);
+        // setCredits(response.data);
+        setCredit(response.data)
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  useEffect(() => {
-    CreditService.getAllCreditsByIdentityNumber(identityNumber)
-      .then((response) => {
-        setCredits(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [identityNumber]);
+  // useEffect(() => {
+  //   CreditService.getCreditByIdentityNumber(identityNumber)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //       setCredit(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [identityNumber]);
 
   return (
     <div className="container">
@@ -40,15 +43,17 @@ const Search = () => {
                   onClick={onClickSearch}
                   onChange={(e) => setIdentityNumber(e.target.value)}
                   class="form-control mr-sm-2"
-                  placeholder="only identity number"
+                  placeholder="Identity Number"
                   type="search"
                   aria-label="Search"
                 />
               </div>
+              <div className="col">
+                <button className="btn btn-info" onClick={onClickSearch}>Search</button>
+              </div>
+              
             </div>
-            <div className="col">
-              <button class="btn btn-info mt-3">Search</button>
-            </div>
+            
           </div>
         </form>
 
@@ -63,22 +68,21 @@ const Search = () => {
               </tr>
             </thead>
             <tbody>
-              {credits.map((credit) => (
-                <tr key={credit.id}>
-                  <td> {credit.id} </td>
-                  <td> {credit.identityNumber} </td>
-                  <td> {credit.creditLimit} </td>
-                  {credit.status ? (
-                    <td style={{ color: "green" }}>
-                      <b>ACCEPTED</b>{" "}
-                    </td>
-                  ) : (
-                    <td style={{ color: "red" }}>
-                      <b>DENIED</b>{" "}
-                    </td>
-                  )}
-                </tr>
-              ))}
+            {credit.identityNumber && <tr>
+                <td >{credit.id}</td>
+                <td >{credit.IdentityNumber}</td>
+                <td >{credit.creditLimit}</td>
+                            {credit.status ? (
+                  <td style={{ color: "green" }}>
+                    <b>ACCEPTED</b>{" "}
+                  </td>
+                ) : (
+                  <td style={{ color: "red" }}>
+                    <b>DENIED</b>{" "}
+                  </td>
+                )}
+              </tr>}
+             
             </tbody>
           </table>
         </div>
@@ -88,3 +92,5 @@ const Search = () => {
 };
 
 export default Search;
+
+
