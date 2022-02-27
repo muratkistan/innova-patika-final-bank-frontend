@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 function App() {
   return (
     
@@ -30,6 +31,7 @@ function App() {
               <Route path="/contactUs" component={ContactUs}></Route>
               <Route path="/credits" component={ListCreditsComponent}></Route>
               <Route path="/sorgu" component={Search}></Route>
+              
               <Redirect to="/"/>
 
           </Switch>

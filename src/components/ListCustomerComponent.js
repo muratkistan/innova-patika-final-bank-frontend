@@ -48,7 +48,7 @@ const ListCustomerComponent = () => {
           <tbody>
             {customers.map((customer) => (
               <tr key={customer.id}>
-                <td> {customer.id} </td>
+                <td> <b>{customer.id}</b> </td>
                 <td> {customer.identityNumber} </td>
                 <td> {customer.firstName} </td>
                 <td>{customer.lastName}</td>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import CreditService from "../services/CreditService";
 const ListCreditsComponent = () => {
   const [credits, setCredits] = useState([]);
@@ -27,11 +28,12 @@ const ListCreditsComponent = () => {
             <th> Identity Number </th>
             <th> Limit</th>
             <th> Status</th>
+           
           </thead>
           <tbody>
             {credits.map((credit) => (
               <tr key={credit.id}>
-                <td> {credit.id} </td>
+                <td><b> {credit.id} </b></td>
                 <td> {credit.identityNumber} </td>
                 <td> {credit.creditLimit} </td>
                 {credit.status ? (
@@ -43,6 +45,7 @@ const ListCreditsComponent = () => {
                     <b>DENIED</b>{" "}
                   </td>
                 )}
+               
               </tr>
             ))}
           </tbody>
