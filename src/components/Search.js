@@ -37,7 +37,7 @@ const Search = () => {
         <form>
           <div className="sorgu">
             <div className="row">
-              <div className="col">
+              <div className="col-8">
                 <input
                   name="identityNumber"
                   onClick={onClickSearch}
