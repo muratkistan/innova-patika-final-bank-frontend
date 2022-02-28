@@ -81,7 +81,7 @@ const EditCustomer = () => {
                           <div class="col-lg-6">
                             <fieldset>
                               <input
-                                type="firstName"
+                                type="text"
                                 onChange={(e) => setFirstName(e.target.value)}
                                 value={firstName}
                                 name="firstName"
@@ -95,7 +95,7 @@ const EditCustomer = () => {
                           <div class="col-lg-6">
                             <fieldset>
                               <input
-                                type="lastName"
+                                type="text"
                                 onChange={(e) => setLastName(e.target.value)}
                                 value={lastName}
                                 name="lastName"
@@ -108,7 +108,7 @@ const EditCustomer = () => {
                           <div class="col-lg-6">
                             <fieldset>
                               <input
-                                type="identityNumber"
+                                type="number"
                                 onChange={(e) =>
                                   setIdentityNumber(e.target.value)
                                 }
@@ -124,7 +124,7 @@ const EditCustomer = () => {
                           <div class="col-lg-6">
                             <fieldset>
                               <input
-                                type="monthlySalary"
+                                type="number"
                                 onChange={(e) =>
                                   setMonthlySalary(e.target.value)
                                 }
@@ -139,7 +139,7 @@ const EditCustomer = () => {
                           <div class="col-lg-6">
                             <fieldset>
                               <input
-                                type="phoneNumber"
+                                type="number"
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                                 value={phoneNumber}
                                 name="phoneNumber"

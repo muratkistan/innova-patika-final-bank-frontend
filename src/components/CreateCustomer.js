@@ -90,7 +90,7 @@ const CreateCustomer = () => {
                         <div class="col-lg-6">
                           <fieldset>
                             <input
-                              type="firstName"
+                              type="text"
                               className={
                                 firstName
                                   ? "form-control is-invalid"
@@ -133,7 +133,7 @@ const CreateCustomer = () => {
                         <div class="col-lg-6">
                           <fieldset>
                             <input
-                              type="identityNumber"
+                              type="number"
                               className={
                                 identityNumber
                                   ? "form-control is-invalid"
@@ -155,7 +155,7 @@ const CreateCustomer = () => {
                         <div class="col-lg-6">
                           <fieldset>
                             <input
-                              type="monthlySalary"
+                              type="number"
                               className={
                                 monthlySalary
                                   ? "form-control is-invalid"
@@ -175,7 +175,7 @@ const CreateCustomer = () => {
                         <div class="col-lg-6">
                           <fieldset>
                             <input
-                              type="phoneNumber"
+                              type="number"
                               className={
                                 phoneNumber
                                   ? "form-control is-invalid"

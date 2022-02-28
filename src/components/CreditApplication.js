@@ -49,7 +49,10 @@ const CreditApplication = () => {
 
     CreditService.addCredit(body)
       .then((response) => {
-        toast.success("Successful", { autoClose: 8000 });
+        console.log("Data",response.data);
+    
+        toast.info("Apply Sended", { autoClose: 1000 });
+       
 
         history.push("/sorgu");
       })
@@ -139,6 +142,7 @@ const CreditApplication = () => {
                               }
                               name="identityNumber"
                               id="identityNumber"
+                              type="number"
                               onChange={onChange}
                               placeholder="Identity Number"
                               autocomplete="on"
@@ -160,6 +164,7 @@ const CreditApplication = () => {
                                   : "form-control "
                               }
                               name="monthlySalary"
+                              type="number"
                               onChange={onChange}
                               id="monthlySalary"
                               placeholder="Monthly Salary"
@@ -182,6 +187,7 @@ const CreditApplication = () => {
                               name="phoneNumber"
                               onChange={onChange}
                               id="phoneNumber"
+                              type="number"
                               placeholder="Phone Number"
                               autocomplete="on"
                             />
